@@ -2,9 +2,12 @@
 
 ## Inspiration
 
+- [ColorStack website](https://www.colorstack.org/)
 -  [UW Madison Chapter Website](https://colorstack.cs.wisc.edu/index.html)
 -  [PUPR Chapter Website](https://colorstackatpupr.github.io/main/index.html)
 -  [FiveO Website](https://mechanic-rockville-7coran2fn-will-flores1.vercel.app/)
+- [FiveO Repo](https://github.com/will-flores1/Five-O-Autocare)
+
 
 ## 🚀 Project Structure
 
