@@ -3,11 +3,10 @@
 ## Inspiration
 
 - [ColorStack website](https://www.colorstack.org/)
--  [UW Madison Chapter Website](https://colorstack.cs.wisc.edu/index.html)
--  [PUPR Chapter Website](https://colorstackatpupr.github.io/main/index.html)
--  [FiveO Website](https://mechanic-rockville-7coran2fn-will-flores1.vercel.app/)
+- [UW Madison Chapter Website](https://colorstack.cs.wisc.edu/index.html)
+- [PUPR Chapter Website](https://colorstackatpupr.github.io/main/index.html)
+- [FiveO Website](https://mechanic-rockville-7coran2fn-will-flores1.vercel.app/)
 - [FiveO Repo](https://github.com/will-flores1/Five-O-Autocare)
-
 
 ## 🚀 Project Structure
 
@@ -31,9 +30,11 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
+is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+There's nothing special about `src/components/`, but that's where we like to put
+any Astro/React/Vue/Svelte/Preact components.
 
 Any static assets, like images, can be placed in the `public/` directory.
 
