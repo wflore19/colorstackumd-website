@@ -137,6 +137,9 @@ const { title, description } = Astro.props;
 		--tablet: "only screen and (max-width: 1024px)";
 		--ipadmini: "only screen and (max-width: 768px)";
 		--mobile: "only screen and (max-width: 550px)";
+		
+		/* ========== Container Width ========== */
+		--max-w-container: 1200px;
 
 		/* ========== Font Families ========== */
 		--font-family-headings: "Montserrat", system-ui, -apple-system,
@@ -176,6 +179,11 @@ const { title, description } = Astro.props;
 			-apple-system,
 			BlinkMacSystemFont;
 		background: #eeeeee;
+	}
+
+	/* Reset styles */
+	.flex {
+		display: flex;
 	}
 
 	/* Reset styles */

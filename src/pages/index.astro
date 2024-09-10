@@ -1,12 +1,14 @@
 ---
+import Container from "../layouts/Container.astro";
 import Layout from "../layouts/Layout.astro";
+import Section from "../layouts/Section.astro";
 ---
 
 <Layout
 	title="ColorStack UMD"
 	description="The Official ColorStack at UMD website.">
-	<div class="section">
-		<div class="hero-content">
+	<Section>
+		<Container>
 			<h4 class="hero-subtitle">Welcome to</h4>
 			<h2 class="hero-title">ColorStack chapter at UMD</h2>
 			<p class="hero-description">
@@ -14,16 +16,37 @@ import Layout from "../layouts/Layout.astro";
 				diversity.
 			</p>
 			<a class="hero-button" href="#">Become a member</a>
-		</div>
+		</Container>
 		<div class="hero-image"></div>
-	</div>
+	</Section>
+	
+	<Section bgColor="var(--color-primary)">
+		<Container>
+			<div class="flex">
+				<div>
+					<ul>
+						<li>
+							<p>Community</p>
+						</li>
+						<li>
+							<p>Events</p>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<ul>
+						<li>Attend monthly workshops, webinars, and coaching sessions from industry leaders</li>
+						<li>Make friends with ColorStack members through social activities</li>
+						<li>Secure the bag at our annual career fairs</li>
+					</ul>
+				</div>
+			</div>
+		</Container>
+	</Section>
 </Layout>
 
 <style>
-	.section {
-		position: relative;
-		padding: 0 24px;
-	}
 	.hero-image {
 		position: absolute;
 		top: 0;
@@ -36,7 +59,6 @@ import Layout from "../layouts/Layout.astro";
 		background-color: black;
 		z-index: 0;
 	}
-
 	.hero-image::before {
 		content: "";
 		background-image: url("/images/mckeldin-mall-umd.png");
@@ -49,15 +71,6 @@ import Layout from "../layouts/Layout.astro";
 		left: 0px;
 		opacity: 0.55;
 	}
-
-	.hero-content {
-		position: relative;
-		margin: 0 auto;
-		max-width: 1400px;
-		padding: 158px 0;
-		z-index: 1;
-	}
-
 	.hero-subtitle {
 		position: relative;
 		color: white;
@@ -67,7 +80,6 @@ import Layout from "../layouts/Layout.astro";
 		letter-spacing: 0.1em;
 		padding-left: clamp(0.75rem, 0.6055rem + 0.6163vw, 1rem);
 	}
-
 	.hero-subtitle::before {
 		position: absolute;
 		content: "";
@@ -78,7 +90,6 @@ import Layout from "../layouts/Layout.astro";
 		transform: translateY(-50%);
 		left: 0;
 	}
-
 	.hero-title {
 		margin-top: 1rem;
 		margin-bottom: 1.5rem;
@@ -89,12 +100,10 @@ import Layout from "../layouts/Layout.astro";
 		color: white;
 		max-width: 600px;
 	}
-
 	.hero-description {
 		margin-bottom: 1.5rem;
 		color: white;
 	}
-
 	.hero-button {
 		display: inline-block;
 		padding: 0.75rem 1.5rem;

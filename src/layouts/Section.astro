@@ -1,0 +1,23 @@
+---
+interface Props {
+	bgColor?: string;
+}
+
+const { bgColor } = Astro.props;
+
+---
+
+<div class="hero-section">
+    
+    <slot />
+
+</div>
+
+<style define:vars={{ bgColor }}>
+	
+	.hero-section {
+		background-color: var(--bgColor);
+		position: relative;
+		padding: 0 24px;
+	}
+</style>
