@@ -1,0 +1,46 @@
+---
+import { getRoutes } from "../helpers/routes"; // Adjust the path if needed
+
+const routes = getRoutes();
+---
+
+<header>
+	<div class="container">
+		<a href="/">
+			<img src="/images/umdcolorstack.png" alt="" height="80" width="80" />
+		</a>
+		<nav>
+			<ul class="nav-list">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<style>
+	header {
+		background-color: var(--color-primary);
+		color: white;
+		padding: 8px 24px;
+	}
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.nav-list {
+		display: flex;
+		flex-direction: row;
+		gap: 24px;
+		list-style: none;
+	}
+</style>

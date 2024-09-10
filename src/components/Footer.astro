@@ -1,0 +1,175 @@
+---
+---
+
+<footer class="footer grid">
+	<ul class="footer-items">
+		<li class="single-footer">
+			<h4>Profile</h4>
+			<ul class="profile">
+				<div class="links">
+					<div class="small-business">
+						<img
+							src=""
+							alt="small business badge"
+							width="24"
+							height="24"
+						/>
+						<p>BBB</p>
+					</div>
+					<div class="google">
+						<a href="">
+							<img
+								src=""
+								alt="link to google business profile"
+								height="24"
+								width="24"
+							/>
+						</a>
+					</div>
+					<div class="facebook">
+						<a href="">
+							<img
+								src=""
+								alt="link to facebook business profile"
+								height="24"
+								width="24"
+							/>
+						</a>
+					</div>
+				</div>
+				<li>
+					<p>
+						At , we provide reliable and affordable auto repair
+						services to keep your vehicle running smoothly. Contact us today for
+						a free estimate and let us help you get back on the road safely.
+						Proudly serving ,  and surrounding
+						areas.
+					</p>
+				</li>
+			</ul>
+		</li>
+		<li class="single-footer">
+			<h4>Quick Links</h4>
+			<ul class="quick-links">
+				<!-- {
+					pages.map((item) => (
+						<li>
+							<a href={item.slug}>{item.name}</a>
+						</li>
+					))
+				} -->
+			</ul>
+		</li>
+		<li class="single-footer">
+			<h4>Information</h4>
+			<ul class="information">
+				<li><a href="/services">Brakes</a></li>
+				<li><a href="/services">Engines</a></li>
+				<li><a href="/services">Tires</a></li>
+				<li><a href="/services">Electrical</a></li>
+			</ul>
+		</li>
+		<li class="single-footer">
+			<h4>Hours</h4>
+			<ul class="hour-items">
+				<li class="single-hour" data-day="sunday">
+					<div class="day">Sun</div>
+					<div class="hour"></div>
+				</li>
+				<li class="single-hour" data-day="monday">
+					<div class="day">Mon</div>
+					<div class="hour"></div>
+				</li>
+				<li class="single-hour" data-day="tuesday">
+					<div class="day">Tues</div>
+					<div class="hour"></div>
+				</li>
+				<li class="single-hour" data-day="wedsnesday">
+					<div class="day">Wed</div>
+					<div class="hour"></div>
+				</li>
+				<li class="single-hour" data-day="thursday">
+					<div class="day">Thur</div>
+					<div class="hour"></div>
+				</li>
+				<li class="single-hour" data-day="friday">
+					<div class="day">Fri</div>
+					<div class="hour"></div>
+				</li>
+				<li class="single-hour" data-day="saturday">
+					<div class="day">Sat</div>
+					<div class="hour"></div>
+				</li>
+			</ul>
+		</li>
+		<li class="single-footer">
+			<h4>Contact Info</h4>
+			<ul class="contact-info">
+				<li>
+					Address: 
+				</li>
+				<li>Phone: </li>
+				<li>Email: </li>
+			</ul>
+		</li>
+		<li class="single-footer">
+			<div class="badges">
+				<div>
+					<img
+						src=""
+						alt="quality guarantee badge"
+						width="100"
+					/>
+				</div>
+				<div>
+					<img src="" alt="yelp badge" width="100" />
+				</div>
+				<div>
+					<img src="" alt="bbb badge" width="100" />
+				</div>
+			</div>
+		</li>
+	</ul>
+	<div class="footer-main">
+		<p>
+			Powered By: <a
+				href="https://www.mocowebdesigns.com/"
+				target="_blank"
+				rel="noopener">MoCo Web Designs</a
+			><br /> © 2023-Present All Rights Reserved. Terms of Use - Privacy Policy
+		</p>
+	</div>
+</footer>
+
+<script>
+	// get the current day
+	const today = new Date().getDay();
+	// select data attribute data-day and bold selected day
+	const dayData = document.querySelectorAll<HTMLElement>("[data-day]");
+
+	switch (today) {
+		case 0:
+			dayData[0].style.fontWeight = "900";
+			break;
+		case 1:
+			dayData[1].style.fontWeight = "900";
+			break;
+		case 2:
+			dayData[2].style.fontWeight = "900";
+			break;
+		case 3:
+			dayData[3].style.fontWeight = "900";
+			break;
+		case 4:
+			dayData[4].style.fontWeight = "900";
+			break;
+		case 5:
+			dayData[5].style.fontWeight = "900";
+			break;
+		case 6:
+			dayData[6].style.fontWeight = "900";
+			break;
+		default:
+			console.log("error");
+	}
+</script>

@@ -1,50 +1,251 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
+
 		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<!--Social Media Display-->
+		<meta property="og:title" content="" />
+		<meta property="og:description" content="" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="/images/social.webp" />
+		<meta property="og:image:secure_url" content="/images/social.webp" />
+
+		<!--Favicons-->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+
+		<!-- Analytics -->
 	</head>
 	<body>
+		<Header />
+
 		<slot />
+
+		<!-- <Footer /> -->
 	</body>
 </html>
 <style is:global>
+	@font-face {
+		font-family: "Montserrat";
+		src: url("/fonts/static/Montserrat-Regular.ttf");
+		font-weight: 400;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "Montserrat";
+		src: url("/fonts/static/Montserrat-Black.ttf");
+		font-weight: 900;
+		font-style: black;
+	}
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		/* ========== Colors ========== */
+		--color-primary: #9b0000;
+		--color-primary-lite: #7dbed6;
+		--color-primary-dark: #266278;
+		--color-primary-opacity: rgba(155, 0, 0, 0.35);
+		--color-primary-complimentary: #996600;
+		--color-secondary: #fff1dc;
+		--color-secondary-shade: #ffad32;
+		--color-background: #eeeeee;
+		--color-text: #040b0d;
+		--color-text-white: #fafbfc;
+		--color-gray: #dbdbdb;
+
+		/* ========== Font Sizes ========== */
+		--font-size-sm: clamp(0.75rem, 0.6778rem + 0.3082vw, 0.875rem);
+		--font-size-md: clamp(1rem, 0.9278rem + 0.3082vw, 1.125rem);
+		--font-size-lg: clamp(1.25rem, 1.1055rem + 0.6163vw, 1.5rem);
+		--font-size-xl: clamp(2.25rem, 2.1055rem + 0.6163vw, 2.5rem);
+		--font-size-heading: clamp(2.5rem, 1.0416rem + 4.6225vw, 4rem);
+
+		/* ========== Spacing ========== */
+		--spacing-sm: 0.5rem clamp(8rem, 5.6888rem + 9.8613vw, 12rem);
+		--spacing-md: 1rem clamp(12rem, 9.6888rem + 9.8613vw, 16rem);
+		--spacing-lg: 1.5rem clamp(20rem, 17.6888rem + 9.8613vw, 24rem);
+		--spacing-xl: 2rem clamp(24rem, 21.6888rem + 9.8613vw, 28rem);
+
+		/* ========== Padding ========== */
+		--padding-button: clamp(0.875rem, 0.8028rem + 0.3082vw, 1rem)
+			clamp(1.4375rem, 1.293rem + 0.6163vw, 1.6875rem);
+
+		/* ========== Animation Duration ========== */
+		--duration-faster: 250ms;
+		--duration-fast: 500ms;
+
+		/* ========== Animation Easing Function ========== */
+		--slide: cubic-bezier(0.22, 1, 0.36, 1);
+		--fade: cubic-bezier(0.22, 1, 0.36, 1);
+
+		/* ========== Border Radius ========== */
+		--radius-sm: 3px;
+		--radius-md: 6px;
+		--radius-lg: 11px;
+		--radius-xl: 14px;
+
+		/* ========== Opacity ========== */
+		--opacity-sm: 0.25;
+		--opacity-md: 0.5;
+		--opacity-lg: 0.75;
+
+		/* ========== Shadows ========== */
+		--shadow-sm: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+			0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+		--shadow-md: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+			0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+		--shadow-lg: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+			0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+
+		/* ========== Breakpoints ========== */
+		--laptop: "only screen and (max-width: 1440px)";
+		--tablet: "only screen and (max-width: 1024px)";
+		--ipadmini: "only screen and (max-width: 768px)";
+		--mobile: "only screen and (max-width: 550px)";
+
+		/* ========== Font Families ========== */
+		--font-family-headings: "Montserrat", system-ui, -apple-system,
+			BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+			"Helvetica Neue", sans-serif;
+		--font-family-body: "Hind Madurai", sans-serif, -apple-system,
+			BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+			"Helvetica Neue", sans-serif;
+		--font-family-mystery: "Libre Baskerville", system-ui, -apple-system,
+			BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+			"Helvetica Neue", sans-serif;
+		--font-family-poop: "Hind Madurai", sans-serif;
+
+		/* ========== Font Weights ========== */
+		--line-height-reset: 1;
+		--line-height-normal: 1.5;
+
+		/* ========== Containers ========== */
+		--laptop-side-padding: 6.344rem;
+		--mobile-side-padding: 1.75rem;
+		--mobile-button-padding: 0.25rem 1.25rem;
+
+		/* ========== Custom ========== */
+		--title-color: #0f0f0f;
+		--active-color: #3e86d2;
+		--separator-color: #292c2d;
+		--dirtywhite: #eeeeee;
+		--white: #4d4d4d;
+		--red: #e74c3c;
+		--black: #000;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
 		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+			"Montserrat",
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont;
+		background: #eeeeee;
+	}
+
+	/* Reset styles */
+	* {
+		box-sizing: border-box;
+	}
+
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		line-height: var(--line-height-normal);
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		overflow-x: hidden;
+		-webkit-font-smoothing: antialiased;
+		background-color: var(--color-background);
+	}
+
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+		margin: 0;
+		font-family: var(--font-family-headings);
+	}
+
+	h1 {
+		font-size: var(--font-size-heading);
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	p {
+		font-family: var(--font-family-body);
+		font-size: var(--font-size-md);
+	}
+
+	a {
+		color: inherit;
+		font-family: var(--font-family-body);
+		text-decoration: none;
+	}
+
+	span {
+		font-family: var(--font-family-body);
 	}
 </style>
