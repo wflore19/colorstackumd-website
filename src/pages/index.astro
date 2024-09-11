@@ -6,46 +6,71 @@ import Section from '../layouts/Section.astro';
 
 <Layout
   title="ColorStack UMD"
-  description="The Official ColorStack at UMD website.">
+  description="The Official ColorStack at UMD website."
+>
   <Section>
     <Container>
-      <h4 class="hero-subtitle">Welcome to</h4>
-      <h2 class="hero-title">ColorStack chapter at UMD</h2>
-      <p class="hero-description">
+      <p class="hero-subtitle text-shadow font-md">Welcome to</p>
+      <h1 class="hero-title text-shadow">The ColorStack chapter at UMD</h1>
+      <p class="hero-description text-shadow">
         We are a community of students passionate about technology and
         diversity.
       </p>
-      <a class="hero-button" href="#">Become a member</a>
+      <a class="hero-button text-shadow" href="/">Become a Member</a>
     </Container>
     <div class="hero-image"></div>
   </Section>
 
   <Section bgColor="var(--color-primary)">
-    <Container>
-      <div class="flex">
-        <div>
-          <ul>
-            <li>
-              <p>Community</p>
-            </li>
-            <li>
-              <p>Events</p>
-            </li>
-          </ul>
-        </div>
+    <Container align="right">
+      <h2 class="text-white font-xl">What is ColorStack at UMD?</h2>
+      <div class="flex" style="gap:24px; padding-top: 48px;">
+        <img
+          src="/images/colorstack-icon.png"
+          alt=""
+          width="108px"
+          height="108px"
+        />
+        <p class="font-heading text-white">x</p>
+        <img src="/images/umd-icon.png" alt="" width="108px" height="108px" />
+      </div>
+      <div
+        class="flex flex-col text-white font-lg w-50"
+        style="padding: 24px 0; gap: 16px;"
+      >
+        <p>
+          We are a club at the University of Maryland whose goal is to increase
+          the number of black and latinx students at UMD who get degreed and
+          hired.
+        </p>
+        <p>
+          Our parent/national organization, <strong>
+            <a href="https://www.colorstack.org/" target="_blank">ColorStack</a
+            ></strong
+          >, has over 12,000+ students from Universities all over North America
+          (CMU, AYU, NYU, WAU..) and has worked with top tech companies (Meta,
+          Duolingo, Atlassian..) to recruit underrepresented students in tech.
+        </p>
 
-        <div>
-          <ul>
-            <li>
-              Attend monthly workshops, webinars, and coaching sessions from
-              industry leaders
-            </li>
-            <li>
-              Make friends with ColorStack members through social activities
-            </li>
-            <li>Secure the bag at our annual career fairs</li>
-          </ul>
-        </div>
+        <p><strong>We plan to bring those ideas to UMD.</strong></p>
+
+        <p>
+          Our strong suit is technology, but we welcome all majors as technology
+          plays a role in all industries.
+        </p>
+      </div>
+
+      <div class="flex space-between text-white">
+        <p>Community</p>
+        <p>Make friends with ColorStack members through social activities</p>
+      </div>
+
+      <div class="flex space-between text-white">
+        <p>Events</p>
+        <p>
+          Attend monthly workshops, webinars, and coaching sessions from
+          industry leaders
+        </p>
       </div>
     </Container>
   </Section>
@@ -74,12 +99,11 @@ import Section from '../layouts/Section.astro';
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.55;
+    opacity: 0.6;
   }
   .hero-subtitle {
     position: relative;
     color: white;
-    font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -118,6 +142,14 @@ import Section from '../layouts/Section.astro';
     text-decoration: none;
   }
 
+  .text-shadow {
+    text-shadow: 1px 1px 8px black;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
   /* Laptop */
   @media (max-width: 1440px) {
     /* CSS styles for laptop screens */
@@ -143,7 +175,7 @@ import Section from '../layouts/Section.astro';
       padding: 60px 0;
     }
     .hero-image {
-      height: 460px;
+      /* height: 460px; */
     }
   }
 </style>
