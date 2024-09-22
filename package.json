@@ -4,9 +4,11 @@
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
+		"dev:apps": "npm run dev && npm run sass",
 		"dev": "astro dev",
 		"build": "astro check && astro build",
 		"preview": "astro preview",
+		"sass": "sass --watch src/scss/custom.scss public/assets/styles.css",
 		"astro": "astro"
 	},
 	"dependencies": {

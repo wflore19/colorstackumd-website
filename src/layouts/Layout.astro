@@ -16,6 +16,8 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="/assets/js/bootstrap.bundle.min.js" is:inline></script>
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
@@ -60,14 +62,21 @@ const { title, description } = Astro.props;
     font-weight: 900;
     font-style: black;
   }
+  html {
+    font-family:
+      'Montserrat',
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont;
+  }
   :root {
     /* ========== Colors ========== */
-    --color-primary: #9b0000;
+    --color-primary: #e21833;
     --color-primary-lite: #7dbed6;
     --color-primary-dark: #266278;
     --color-primary-opacity: rgba(155, 0, 0, 0.35);
     --color-primary-complimentary: #996600;
-    --color-secondary: #fff1dc;
+    --color-secondary: #ffd303;
     --color-secondary-shade: #ffad32;
     --color-background: #eeeeee;
     --color-text: #040b0d;
@@ -156,140 +165,5 @@ const { title, description } = Astro.props;
     --white: #4d4d4d;
     --red: #e74c3c;
     --black: #000;
-  }
-
-  html {
-    font-family:
-      'Montserrat',
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont;
-    background: #eeeeee;
-  }
-
-  /* Custom classes */
-  .flex {
-    display: flex;
-  }
-
-  .flex-col {
-    flex-direction: column;
-  }
-
-  .space-between {
-    justify-content: space-between;
-  }
-
-  .justify-end {
-    justify-content: end;
-  }
-  .align-end {
-    align-items: end;
-  }
-
-  .text-white {
-    color: var(--color-text-white);
-  }
-
-  .font-sm {
-    font-size: var(--font-size-sm);
-  }
-  .font-md {
-    font-size: var(--font-size-md);
-  }
-  .font-lg {
-    font-size: var(--font-size-lg);
-  }
-  .font-xl {
-    font-size: var(--font-size-xl);
-  }
-  .font-heading {
-    font-size: var(--font-size-heading);
-  }
-
-  .align-left {
-    text-align: left;
-  }
-  .align-center {
-    text-align: center;
-  }
-  .align-right {
-    text-align: right;
-  }
-
-  .w-50 {
-    max-width: 50%;
-  }
-
-  /* Reset styles */
-  * {
-    box-sizing: border-box;
-    /* border: 1px solid white; */
-  }
-
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  html,
-  body {
-    line-height: var(--line-height-normal);
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    background-color: var(--color-background);
-  }
-
-  img,
-  picture,
-  video,
-  canvas,
-  svg {
-    display: block;
-    max-width: 100%;
-    margin: 0;
-  }
-
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    overflow-wrap: break-word;
-    margin: 0;
-    font-family: var(--font-family-headings);
-  }
-
-  h1 {
-    font-size: var(--font-size-heading);
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-family: var(--font-family-body);
-    font-size: var(--font-size-md);
-  }
-
-  a {
-    color: inherit;
-    font-family: var(--font-family-body);
-    text-decoration: none;
-  }
-
-  span {
-    font-family: var(--font-family-body);
   }
 </style>
