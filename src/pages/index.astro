@@ -6,38 +6,27 @@ import Section from '../layouts/Section.astro';
 
 <Layout
   title="ColorStack at University of Maryland"
-  description="The Official website for ColorStack at the University of Maryland. A community of black and latinx students passionate about technology anddiversity"
->
+  description="The Official website for ColorStack at the University of Maryland. A community of black and latinx students passionate about technology anddiversity">
   <!-- Hero Section -->
-  <div class="container col-xxl-8 py-5" id="hero-section">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-2 py-lg-5">
-      <div class="col-12 col-lg-6">
-        <img
-          src="/images/first-gbm.jpg"
-          class="d-block mx-lg-auto img-fluid"
-          alt="Bootstrap Themes"
-          width="full"
-          height="full"
-          loading="lazy"
-        />
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
-          The ColorStack chapter at UMD
-        </h1>
-        <p class="lead">
+  <section class="hero-image">
+    <div class="container h-100 d-flex align-items-center py-5">
+      <div class="text-white col-12 col-lg-6">
+        <h1 class="display-3 fw-bold mb-3">The ColorStack chapter at UMD</h1>
+        <p class="lead mb-3">
           We are a community of students passionate about technology and
           diversity.
         </p>
-        <button type="button" class="btn btn-primary btn-lg mt-3"
+        <button type="button" class="btn btn-primary btn-lg"
           >Become a Member</button
         >
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- About Section -->
-  <div class="bg-primary d-flex justify-content-center" id="about-section">
+  <section
+    class="bg-primary d-flex justify-content-center py-5"
+    id="about-section">
     <div class="container col-xxl-8 py-lg-5 py-1">
       <div class="row flex-lg-row-reverse g-5 py-2 py-lg-5 text-white">
         <div class="col-lg-6" id="text-content">
@@ -73,8 +62,7 @@ import Section from '../layouts/Section.astro';
           <div
             id="carouselExample"
             class="carousel slide carousel-fade"
-            data-bs-ride="carousel"
-          >
+            data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button
                 type="button"
@@ -121,8 +109,7 @@ import Section from '../layouts/Section.astro';
               class="carousel-control-prev"
               type="button"
               data-bs-target="#carouselExample"
-              data-bs-slide="prev"
-            >
+              data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"
               ></span>
               <span class="visually-hidden">Previous</span>
@@ -131,8 +118,7 @@ import Section from '../layouts/Section.astro';
               class="carousel-control-next"
               type="button"
               data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
+              data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"
               ></span>
               <span class="visually-hidden">Next</span>
@@ -141,65 +127,129 @@ import Section from '../layouts/Section.astro';
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Benefits Section -->
-  <div class="container col-xxl-8 py-5" id="featured-3">
-    <h2 class="py-2 border-bottom">Get Involved</h2>
-    <div class="row g-5 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <div
-          class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            height="36"
-          >
-            <path
-              d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40L64 64C28.7 64 0 92.7 0 128l0 16 0 48L0 448c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-256 0-48 0-16c0-35.3-28.7-64-64-64l-40 0 0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40L152 64l0-40zM48 192l352 0 0 256c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256z"
-            ></path></svg
-          >
+  <section class="container col-xxl-8 py-5" id="featured-3">
+    <div class="py-lg-5">
+      <h2 class="py-2 border-bottom">Get Involved</h2>
+      <div class="row g-5 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+          <div
+            class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              height="36">
+              <path
+                d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40L64 64C28.7 64 0 92.7 0 128l0 16 0 48L0 448c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-256 0-48 0-16c0-35.3-28.7-64-64-64l-40 0 0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40L152 64l0-40zM48 192l352 0 0 256c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256z"
+              ></path></svg
+            >
+          </div>
+          <h3 class="">Events</h3>
+          <p>Be the first to know about what we have planned</p>
         </div>
-        <h3 class="">Events</h3>
-        <p>Be the first to know about what we have planned</p>
-      </div>
-      <div class="feature col">
-        <div
-          class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            height="36"
-          >
-            <path
-              d="M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160l0 96 192 0 128 0 192 0 0-96c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zM512 288l-192 0 0 32c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-32L0 288 0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-128z"
-            ></path></svg
-          >
+        <div class="feature col">
+          <div
+            class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="36">
+              <path
+                d="M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160l0 96 192 0 128 0 192 0 0-96c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zM512 288l-192 0 0 32c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-32L0 288 0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-128z"
+              ></path></svg
+            >
+          </div>
+          <h3 class="">Workshops</h3>
+          <p>
+            Attend monthly workshops and webinar sessions from industry leaders
+          </p>
         </div>
-        <h3 class="">Workshops</h3>
-        <p>
-          Attend monthly workshops and webinar sessions from industry leaders
-        </p>
-      </div>
-      <div class="feature col">
-        <div
-          class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            height="36"
-          >
-            <path
-              d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"
-            ></path></svg
-          >
+        <div class="feature col">
+          <div
+            class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              height="36">
+              <path
+                d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"
+              ></path></svg
+            >
+          </div>
+          <h3 class="">Community</h3>
+          <p>Experience a truly safe space for Black and Latinx students</p>
         </div>
-        <h3 class="">Community</h3>
-        <p>Experience a truly safe space for Black and Latinx students</p>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Upcoming Events Section -->
+  <section class="container col-xxl-8 py-5" id="featured-3">
+    <h2 class="py-2 border-bottom">Upcoming Events</h2>
+    <div class="row row-cols-1 row-cols-lg-3 py-5 g-3">
+      <div class="col">
+        <div class="card">
+          <img
+            src="/images/amazon.jpg"
+            class="card-img-top p-5"
+            alt="Amazon resume review ColorStack event"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Resume Review w/ Amazon Recruiters</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">
+              Event Information
+            </h6>
+            <p class="card-text">
+              <span><strong>Date:</strong></span> Monday September 23rd, 2024
+            </p>
+            <p class="card-text">
+              <span><strong>Time:</strong></span> 6:00pm - 7:30pm EST
+            </p>
+            <p class="card-text">
+              <span><strong>Room:</strong></span> Pyon Su 2108
+            </p>
+            <p class="card-text">
+              <span><strong>Location:</strong></span> 3972 Campus Dr, College Park,
+              MD 20742
+            </p>
+            <p><strong>**BRING YOUR LAPTOPS!</strong></p>
+            <button type="button" class="btn btn-primary mb-3">
+              RSVP <em>(required)</em></button
+            >
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="card-link">TerpLink</a>
+              </div>
+              <small class="text-body-secondary">1h30m</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('/images/mckeldin-umd.png');
+
+    /* Set a specific height */
+    height: 40rem;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  @media only screen and (max-width: 992px) {
+    .hero-image {
+      height: 25rem;
+    }
+  }
+</style>
