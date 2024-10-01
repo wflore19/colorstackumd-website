@@ -1,17 +1,23 @@
-export function getRoutes() {
-	// During your Astro build, this code will run and generate the manifest
-	const manifest = import.meta.glob("/src/pages/**/*.astro", { eager: true });
+// src/helpers/routes.ts
 
-	const routes = Object.keys(manifest).map((path) => {
-		// Clean up the path to match your route structure
-		const routePath = path
-			.replace("/src/pages", "") // Remove the base directory
-			.replace(".astro", "") // Remove the file extension
-			.replace(/\/index$/, "") // Handle index routes
-			.replace(/\[([^\]]+)\]/g, ":$1"); // Convert dynamic segments to route params
-
-		return routePath || "/";
-	});
-
-	return routes;
+interface Route {
+	name: string;
+	path: string;
+}
+  
+export function getRoutes(): Route[] {
+return [
+	{
+	name: 'Home',
+	path: '/'
+	},
+	{
+	name: 'About',
+	path: '/about'
+	},
+	{
+	name: 'Events',
+	path: '/events'
+	},
+];
 }
