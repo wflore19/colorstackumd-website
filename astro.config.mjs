@@ -2,6 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://wflore19.github.io/colorstackumd-website/',
-  base: '',
+  site: 'https://wflore19.github.io',
+  base: 'colorstackumd-website',
 });
