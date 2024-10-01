@@ -1,80 +1,130 @@
 ---
+import { getRoutes } from '../helpers/routes';
 
+const routes = getRoutes();
+const currentYear = new Date().getFullYear();
 ---
 
-<div class="container col-xxl-8" id="footer">
-  <footer class="d-flex justify-content-between py-5 my-3 border-top">
-    <div class="mb-3">
-      <a
-        href="/"
-        class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
-      >
-        <img
-          class="mt-2 mt-lg-0"
-          src="images/umdcolorstack-icon.png"
-          alt=""
-          height="80"
-        />
-      </a>
+<footer class="bg-light py-5 mt-5">
+  <div class="container col-xxl-8">
+    <div class="row g-4">
+      <div class="col-md-4 mb-3">
+        <a
+          href="/"
+          class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
+        >
+          <img
+            src="/images/umdcolorstack-icon.png"
+            alt="ColorStack UMD Logo"
+            height="60"
+            class="me-2"
+          />
+          <span class="fs-5">ColorStack UMD</span>
+        </a>
+        <p class="text-muted">
+          Empowering Black and Latinx students in tech at the University of
+          Maryland.
+        </p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h5>Quick Links</h5>
+        <ul class="nav flex-column">
+          {
+            routes.map((route) => (
+              <li class="nav-item mb-2">
+                <a href={route.path} class="nav-link p-0 text-muted">
+                  {route.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h5>Connect With Us</h5>
+        <ul class="list-unstyled d-flex gap-3">
+          <li>
+            <a class="link-body-emphasis" href="#" aria-label="GroupMe">
+              <img
+                src="/images/groupme-icon.png"
+                alt=""
+                height="24"
+                width="24"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              class="link-body-emphasis"
+              href="https://terplink.umd.edu/organization/colorstackumd"
+              aria-label="TerpLink"
+            >
+              <img
+                src="/images/terplink-icon.png"
+                alt=""
+                height="24"
+                width="24"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              class="link-body-emphasis"
+              href="https://www.linkedin.com/company/colorstack-umd-college-park/"
+              aria-label="LinkedIn"
+            >
+              <img
+                src="/images/linkedin-icon.png"
+                alt=""
+                height="24"
+                width="24"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              class="link-body-emphasis"
+              href="https://www.instagram.com/colorstackumd/?hl=en"
+              aria-label="Instagram"
+            >
+              <img
+                src="/images/instagram-icon.png"
+                alt=""
+                height="24"
+                width="24"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="w-25 mb-3">
-      <h5>Links</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#events" class="nav-link p-0 text-body-secondary">Events</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#footer" class="nav-link p-0 text-body-secondary"
-            >Contact Us</a
-          >
-        </li>
-      </ul>
+    <div
+      class="d-flex flex-column flex-sm-row justify-content-between py-4 mt-4 border-top"
+    >
+      <p>&copy; {currentYear} ColorStack UMD. All rights reserved.</p>
     </div>
-  </footer>
-</div>
-
-<div class="container col-xxl-8">
-  <div
-    class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-top"
-  >
-    <div class="">
-      <span class="">&copy; 2024 ColorStack UMD</span>
-    </div>
-
-    <ul class="nav justify-content-end list-unstyled d-flex">
-      <li class="ms-3">
-        <a class="text-body-secondary" href="#"
-          ><img src="images/groupme-icon.png" alt="" height="24" /></a
-        >
-      </li>
-      <li class="ms-3">
-        <a
-          class="text-body-secondary"
-          href="https://terplink.umd.edu/organization/colorstackumd"
-        >
-          <img src="images/terplink-icon.png" alt="" height="24" />
-        </a>
-      </li>
-      <li class="ms-3">
-        <a
-          class="text-body-secondary"
-          href="https://www.linkedin.com/company/colorstack-umd-college-park/"
-        >
-          <img src="images/linkedin-icon.png" alt="" height="24" />
-        </a>
-      </li>
-      <li class="ms-3">
-        <a
-          class="text-body-secondary"
-          href="https://www.instagram.com/colorstackumd/?hl=en"
-        >
-          <img src="images/instagram-icon.png" alt="" height="24" />
-        </a>
-      </li>
-    </ul>
   </div>
-</div>
+</footer>
+
+<style>
+  footer {
+    font-size: 0.9rem;
+  }
+
+  footer h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  footer .nav-link:hover {
+    color: #0d6efd !important;
+  }
+
+  footer .link-body-emphasis:hover {
+    opacity: 0.7;
+  }
+</style>
