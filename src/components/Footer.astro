@@ -1,5 +1,10 @@
 ---
 import { getRoutes } from '../helpers/routes';
+import colorstackumd_icon from '../../public/images/umdcolorstack-icon.png';
+import terplink_icon from '../../public/images/terplink-icon.png';
+import instagram_icon from '../../public/images/instagram-icon.png';
+import groupme_icon from '../../public/images/groupme-icon.png';
+import linkedin_icon from '../../public/images/linkedin-icon.png';
 
 const routes = getRoutes();
 const currentYear = new Date().getFullYear();
@@ -14,7 +19,7 @@ const currentYear = new Date().getFullYear();
           class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
         >
           <img
-            src="images/umdcolorstack-icon.png"
+            src={colorstackumd_icon.src}
             alt="ColorStack UMD Logo"
             height="60"
             class="me-2"
@@ -50,12 +55,7 @@ const currentYear = new Date().getFullYear();
         <ul class="list-unstyled d-flex gap-3">
           <li>
             <a class="link-body-emphasis" href="#" aria-label="GroupMe">
-              <img
-                src="images/groupme-icon.png"
-                alt=""
-                height="24"
-                width="24"
-              />
+              <img src={groupme_icon.src} alt="" height="24" width="24" />
             </a>
           </li>
           <li>
@@ -64,12 +64,7 @@ const currentYear = new Date().getFullYear();
               href="https://terplink.umd.edu/organization/colorstackumd"
               aria-label="TerpLink"
             >
-              <img
-                src="images/terplink-icon.png"
-                alt=""
-                height="24"
-                width="24"
-              />
+              <img src={terplink_icon.src} alt="" height="24" width="24" />
             </a>
           </li>
           <li>
@@ -78,12 +73,7 @@ const currentYear = new Date().getFullYear();
               href="https://www.linkedin.com/company/colorstack-umd-college-park/"
               aria-label="LinkedIn"
             >
-              <img
-                src="images/linkedin-icon.png"
-                alt=""
-                height="24"
-                width="24"
-              />
+              <img src={linkedin_icon.src} alt="" height="24" width="24" />
             </a>
           </li>
           <li>
@@ -92,12 +82,7 @@ const currentYear = new Date().getFullYear();
               href="https://www.instagram.com/colorstackumd/?hl=en"
               aria-label="Instagram"
             >
-              <img
-                src="images/instagram-icon.png"
-                alt=""
-                height="24"
-                width="24"
-              />
+              <img src={instagram_icon.src} alt="" height="24" width="24" />
             </a>
           </li>
         </ul>
