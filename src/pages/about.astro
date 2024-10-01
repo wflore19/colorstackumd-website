@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const teamMembers = [
+  {
+    name: 'Adiah Amadou',
+    role: 'President',
+  },
+  {
+    name: 'Omonegho Ugheoke',
+    role: 'Treasurer',
+  },
+  {
+    name: 'Ronaisha Ruth',
+    role: 'Faculty/Staff Advisor',
+  },
+  {
+    name: 'Noah Owens',
+    role: 'Faculty/Staff Advisor',
+  },
+  {
+    name: 'Alicia Debra',
+    role: 'Outreach Chair',
+  },
+  {
+    name: 'Wilfredo Flores',
+    role: 'Media Chair II',
+  },
+  {
+    name: 'Kathleen Vasquez',
+    role: 'Media Chair I',
+  },
+  {
+    name: 'Ryan Kemajou',
+    role: 'Secretary',
+  },
+];
+---
+
+<Layout
+  title="About Us | ColorStack at University of Maryland"
+  description="Learn about ColorStack at the University of Maryland, our mission, and our team."
+>
+  <!-- Hero Section -->
+  <section class="hero-image">
+    <div class="container col-xxl-8 h-100 d-flex align-items-center py-5">
+      <div class="text-white col-12 col-lg-6">
+        <h1 class="display-3 fw-bold mb-3">About Us</h1>
+        <p class="lead mb-3">
+          Empowering Black and Latinx students in technology at UMD.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content Section -->
+  <section class="container col-xxl-8 py-5">
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Our Mission</h2>
+        <p class="lead">
+          ColorStack at UMD is dedicated to increasing the number of Black and
+          Latinx students who graduate with computing degrees and launch
+          rewarding careers in technology.
+        </p>
+        <p>
+          We strive to create a supportive community, provide valuable
+          resources, and connect our members with exciting opportunities in the
+          tech industry.
+        </p>
+        <h3 class="fw-bold mt-5 mb-4">What We Do</h3>
+        <ul class="list-unstyled">
+          <li>✅ Host workshops and tech talks with industry professionals</li>
+          <li>✅ Provide mentorship and academic support</li>
+          <li>✅ Organize networking events and career fairs</li>
+          <li>✅ Foster a community of like-minded students</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Our Team</h2>
+        <div class="row g-4">
+          {
+            teamMembers.map((member) => (
+              <div class="col-md-6">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">{member.name}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{member.role}</h6>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('images/mckeldin-umd.png');
+    height: 25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  @media only screen and (max-width: 992px) {
+    .hero-image {
+      height: 20rem;
+    }
+  }
+
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+</style>
