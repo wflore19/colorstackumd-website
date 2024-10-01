@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import amazon_icon from '../../public/images/amazon.jpg';
 
 type Event = {
   title: string;
@@ -29,7 +30,7 @@ const allEvents: Event[] = [
     time: '6:00pm - 7:30pm EST',
     location: 'Pyon Su 2108',
     address: '3972 Campus Dr, College Park, MD 20742',
-    image: 'images/amazon.jpg',
+    image: amazon_icon.src,
     duration: '1h30m',
   },
   // Add more events as needed
@@ -181,7 +182,7 @@ const pastEvents: CategorizedEvent[] = sortCategorizedEvents(allEvents)
 <style>
   .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('images/mckeldin-umd.png');
+      url('../images/mckeldin-umd.png');
     height: 25rem;
     background-position: center;
     background-repeat: no-repeat;
