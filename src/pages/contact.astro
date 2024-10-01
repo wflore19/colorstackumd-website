@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact Us | ColorStack at University of Maryland"
+  description="Get in touch with ColorStack at the University of Maryland. We'd love to hear from you!"
+>
+  <!-- Hero Section -->
+  <section class="hero-image">
+    <div class="container col-xxl-8 h-100 d-flex align-items-center py-5">
+      <div class="text-white col-12 col-lg-6">
+        <h1 class="display-3 fw-bold mb-3">Contact Us</h1>
+        <p class="lead mb-3">
+          We'd love to hear from you! Get in touch with ColorStack at UMD.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="container col-xxl-8 py-5">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="mb-4">Send us a message</h2>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <h2 class="mb-4">Other ways to connect</h2>
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <strong>Email:</strong>
+            <p>colorstackumd at gmail dot com</p>
+          </li>
+          <li class="mb-3">
+            <strong>Instagram:</strong>
+            <a href="https://www.instagram.com/colorstackumd" target="_blank"
+              >@colorstackumd</a
+            >
+          </li>
+          <li class="mb-3">
+            <strong>LinkedIn:</strong>
+            <a
+              href="https://www.linkedin.com/company/colorstack-umd"
+              target="_blank">ColorStack UMD</a
+            >
+          </li>
+        </ul>
+        <div class="mt-4">
+          <h3 class="h5 mb-3">Find us on campus</h3>
+          <p>
+            Brendan Iribe Center for Computer Science and Engineering<br />
+            8125 Paint Branch Drive<br />
+            College Park, MD 20742
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('images/mckeldin-umd.png');
+    height: 25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  @media only screen and (max-width: 992px) {
+    .hero-image {
+      height: 20rem;
+    }
+  }
+</style>
