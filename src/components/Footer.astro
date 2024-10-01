@@ -33,7 +33,10 @@ const currentYear = new Date().getFullYear();
           {
             routes.map((route) => (
               <li class="nav-item mb-2">
-                <a href={`${route.path}`} class="nav-link p-0 text-muted">
+                <a
+                  href={`/colorstackumd-website${route.path}`}
+                  class="nav-link p-0 text-muted"
+                >
                   {route.name}
                 </a>
               </li>
