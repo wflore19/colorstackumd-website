@@ -1,8 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+type Event = {
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  address: string;
+  image?: string;
+  duration: string;
+};
+
+type CategorizedEvent = Event & { status: string };
+
 // In a real application, you would fetch this data from a database or API
-const allEvents = [
+const allEvents: Event[] = [
+  {
+    title: 'Tech Talk with DraftKings',
+    date: 'March 15, 2024',
+    time: '5:00pm - 6:30pm EST',
+    location: 'Brendan Iribe Center',
+    address: '8125 Paint Branch Drive, College Park, MD 20742',
+    duration: '1h30m',
+  },
   {
     title: 'Resume Review w/ Amazon Recruiters',
     date: 'September 23, 2024',
@@ -12,24 +32,15 @@ const allEvents = [
     image: 'images/amazon.jpg',
     duration: '1h30m',
   },
-  {
-    title: 'Tech Talk with Google Engineers',
-    date: 'March 15, 2024',
-    time: '5:00pm - 6:30pm EST',
-    location: 'Brendan Iribe Center',
-    address: '8125 Paint Branch Drive, College Park, MD 20742',
-    image: 'images/google-event.jpg',
-    duration: '1h30m',
-  },
   // Add more events as needed
 ];
 
 // Function to categorize events
-function categorizeEvents(events) {
+function categorizeEvents(events: Event[]) {
   const today = new Date();
   today.setHours(0, 0, 0, 0); // Set to beginning of the day
 
-  return events.map((event) => {
+  return events.map((event: Event) => {
     const eventDate = new Date(event.date + ' ' + event.time.split(' - ')[0]);
     return {
       ...event,
@@ -38,17 +49,21 @@ function categorizeEvents(events) {
   });
 }
 
-// Categorize and sort events
-const categorizedEvents = categorizeEvents(allEvents).sort(
-  (a, b) => new Date(a.date) - new Date(b.date)
-);
+// Sort the categorized events
+const sortCategorizedEvents = (events: Event[]): CategorizedEvent[] => {
+  return categorizeEvents(events).sort((a, b) => {
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    return dateA - dateB;
+  });
+};
 
 // Separate into upcoming and past events
-const upcomingEvents = categorizedEvents.filter(
-  (event) => event.status === 'upcoming'
-);
-const pastEvents = categorizedEvents
-  .filter((event) => event.status === 'past')
+const upcomingEvents: CategorizedEvent[] = sortCategorizedEvents(
+  allEvents
+).filter((event: CategorizedEvent) => event.status === 'upcoming');
+const pastEvents: CategorizedEvent[] = sortCategorizedEvents(allEvents)
+  .filter((event: CategorizedEvent) => event.status === 'past')
   .reverse(); // Reverse to show most recent first
 ---
 
@@ -76,11 +91,13 @@ const pastEvents = categorizedEvents
         upcomingEvents.map((event) => (
           <div class="col">
             <div class="card h-100">
-              <img
-                src={event.image}
-                class="card-img-top p-3"
-                alt={event.title}
-              />
+              {event.image ? (
+                <img
+                  src={event.image}
+                  class="card-img-top p-3"
+                  alt={event.title}
+                />
+              ) : null}
               <div class="card-body">
                 <h5 class="card-title">{event.title}</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
@@ -125,11 +142,13 @@ const pastEvents = categorizedEvents
         pastEvents.map((event) => (
           <div class="col">
             <div class="card h-100">
-              <img
-                src={event.image}
-                class="card-img-top p-3"
-                alt={event.title}
-              />
+              {event.image ? (
+                <img
+                  src={event.image}
+                  class="card-img-top p-3"
+                  alt={event.title}
+                />
+              ) : null}
               <div class="card-body">
                 <h5 class="card-title">{event.title}</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
