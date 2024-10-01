@@ -41,7 +41,7 @@ const currentPath = Astro.url.pathname;
               <li class="nav-item">
                 <a
                   class={`nav-link px-3 ${currentPath === route.path ? 'active fw-bold' : ''}`}
-                  href={`colorstackumd-website/${route.path}`}
+                  href={`${route.path}`}
                   aria-current={currentPath === route.path ? 'page' : undefined}
                 >
                   {route.name}
