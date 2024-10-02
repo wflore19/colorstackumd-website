@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import colorstackumd_icon from '../../public/images/umdcolorstack-icon.png';
+import mckeldin_img from '../../public/images/mckeldin-umd.png';
 ---
 
 <Layout
@@ -7,12 +9,15 @@ import Layout from '../layouts/Layout.astro';
   description="The Official website for ColorStack at the University of Maryland. A community of black and latinx students passionate about technology anddiversity"
 >
   <!-- Hero Section -->
-  <section class="hero-image d-flex align-items-center">
+  <section
+    class="hero-image d-flex align-items-center"
+    style={`background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${mckeldin_img.src});`}
+  >
     <div class="container col-xxl-8 px-4 py-5">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6 mx-auto">
           <img
-            src="images/umdcolorstack-icon.png"
+            src={colorstackumd_icon.src}
             class="d-block mx-lg-auto img-fluid"
             alt="ColorStack Logo"
             width="700"
@@ -440,8 +445,8 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('images/mckeldin-umd.png');
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('images/mckeldin-umd.png'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import amazon_icon from '../../public/images/amazon.jpg';
+import mckeldin_img from '../../public/images/mckeldin-umd.png';
 
 type Event = {
   title: string;
@@ -73,7 +74,10 @@ const pastEvents: CategorizedEvent[] = sortCategorizedEvents(allEvents)
   description="Upcoming and past events for ColorStack at the University of Maryland."
 >
   <!-- Hero Section -->
-  <section class="hero-image">
+  <section
+    class="hero-image"
+    style={`background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${mckeldin_img.src});`}
+  >
     <div class="container col-xxl-8 h-100 d-flex align-items-center py-5">
       <div class="text-white col-12 col-lg-6">
         <h1 class="display-3 fw-bold mb-3">Events</h1>
@@ -181,8 +185,8 @@ const pastEvents: CategorizedEvent[] = sortCategorizedEvents(allEvents)
 
 <style>
   .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('../images/mckeldin-umd.png');
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('../images/mckeldin-umd.png'); */
     height: 25rem;
     background-position: center;
     background-repeat: no-repeat;

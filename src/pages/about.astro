@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import mckeldin_img from '../../public/images/mckeldin-umd.png';
 
 const teamMembers = [
   {
@@ -42,7 +43,10 @@ const teamMembers = [
   description="Learn about ColorStack at the University of Maryland, our mission, and our team."
 >
   <!-- Hero Section -->
-  <section class="hero-image">
+  <section
+    class="hero-image"
+    style={`background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${mckeldin_img.src});`}
+  >
     <div class="container col-xxl-8 h-100 d-flex align-items-center py-5">
       <div class="text-white col-12 col-lg-6">
         <h1 class="display-3 fw-bold mb-3">About Us</h1>
@@ -99,8 +103,8 @@ const teamMembers = [
 
 <style>
   .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('../images/mckeldin-umd.png');
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('../images/mckeldin-umd.png'); */
     height: 25rem;
     background-position: center;
     background-repeat: no-repeat;
