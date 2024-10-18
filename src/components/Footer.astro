@@ -12,8 +12,8 @@ const currentYear = new Date().getFullYear();
 
 <footer class="bg-light py-5 mt-5">
   <div class="container col-xxl-8">
-    <div class="row g-4">
-      <div class="col-md-4 mb-3">
+    <div class="row g-4 justify-content-between">
+      <div class="col-md-6 mb-3 text-start">
         <a
           href="/"
           class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
@@ -32,9 +32,9 @@ const currentYear = new Date().getFullYear();
         </p>
       </div>
 
-      <div class="col-md-4 mb-3">
+      <div class="col-md-3 mb-3 text-md-end">
         <h5>Quick Links</h5>
-        <ul class="nav flex-column">
+        <ul class="nav flex-column align-items-md-end">
           {
             routes.map((route) => (
               <li class="nav-item mb-2">
@@ -50,9 +50,9 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <div class="col-md-4 mb-3">
+      <div class="col-md-3 mb-3 text-md-end">
         <h5>Connect With Us</h5>
-        <ul class="list-unstyled d-flex gap-3">
+        <ul class="list-unstyled d-flex justify-content-md-end gap-3">
           <li>
             <a class="link-body-emphasis" href="#" aria-label="GroupMe">
               <img src={groupme_icon.src} alt="" height="32" width="32" />
