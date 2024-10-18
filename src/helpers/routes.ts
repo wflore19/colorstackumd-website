@@ -8,10 +8,6 @@ interface Route {
 export function getRoutes(): Route[] {
 return [
 	{
-	name: 'Home',
-	path: '/'
-	},
-	{
 	name: 'About',
 	path: '/about'
 	},
