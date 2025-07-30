@@ -1,19 +1,20 @@
 {
-	"name": "colorstackumd-website",
-	"author": "Wilfredo Flores",
-	"type": "module",
-	"version": "0.0.2",
-	"scripts": {
-		"dev:apps": "npm run dev && npm run sass",
-		"dev": "astro dev",
-		"build": "astro check && astro build",
-		"preview": "astro preview",
-		"sass": "sass --watch src/scss/custom.scss public/assets/styles.css",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"@astrojs/check": "^0.9.3",
-		"astro": "^4.15.4",
-		"typescript": "^5.6.2"
-	}
+  "name": "colorstackumd-website",
+  "author": "Wilfredo Flores",
+  "type": "module",
+  "version": "0.0.2",
+  "scripts": {
+    "dev:apps": "npm run dev && npm run sass",
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "sass": "sass --watch src/scss/custom.scss public/assets/styles.css",
+    "sass:dev": "sass --watch src/scss/custom.scss src/css/styles.css",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "astro": "^4.15.4",
+    "typescript": "^5.6.2"
+  }
 }
