@@ -10,13 +10,11 @@ const currentPath = Astro.url.pathname;
   <nav
     class="navbar navbar-expand-lg bg-primary container col-xxl-8"
     aria-label="Main navigation"
-    data-bs-theme="dark"
-  >
+    data-bs-theme="dark">
     <div class="container-fluid">
       <a
         class="navbar-brand d-flex align-items-center"
-        href="/colorstackumd-website"
-      >
+        href="/colorstackumd-website">
         <img
           src={colorstackumd_icon.src}
           alt="ColorStack UMD Logo"
@@ -29,37 +27,62 @@ const currentPath = Astro.url.pathname;
       <button
         class="navbar-toggler"
         type="button"
-        data-bs-toggle="collapse"
+        data-bs-toggle="offcanvas"
         data-bs-target="#mainNavbar"
         aria-controls="mainNavbar"
         aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          {
-            routes.map((route) => (
-              <li class="nav-item">
-                <a
-                  class={`nav-link px-3 ${currentPath === route.path ? 'active fw-bold' : ''}`}
-                  href={`/colorstackumd-website${route.path}`}
-                  aria-current={currentPath === route.path ? 'page' : undefined}
-                >
-                  {route.name}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-        <a
-          href="https://terplink.umd.edu/organization/colorstackumd"
-          class="btn btn-outline-light ms-lg-3 mt-3 mt-lg-0"
-          target="_blank"
-          rel="noopener noreferrer">Become a member</a
-        >
+      <div
+        class="offcanvas offcanvas-end custom-offcanvas"
+        tabindex="-1"
+        id="mainNavbar"
+        aria-labelledby="mainNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="mainNavbarLabel">
+            <img
+              src={colorstackumd_icon.src}
+              alt="ColorStack UMD Logo"
+              height="40"
+              class="me-2"
+            />
+            ColorStack UMD
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            {
+              routes.map((route) => (
+                <li class="nav-item">
+                  <a
+                    class={`nav-link ${currentPath === route.path ? 'active' : ''}`}
+                    href={`/colorstackumd-website${route.path}`}
+                    aria-current={
+                      currentPath === route.path ? 'page' : undefined
+                    }>
+                    {route.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <div class="mt-4 mt-lg-0">
+            <a
+              href="https://terplink.umd.edu/organization/colorstackumd"
+              class="btn btn-outline-light ms-lg-3 mt-3 mt-lg-0"
+              target="_blank"
+              rel="noopener noreferrer">
+              Become a member
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -94,12 +117,35 @@ const currentPath = Astro.url.pathname;
     left: 0;
   }
 
+  @media (min-width: 992px) {
+    .offcanvas {
+      position: static;
+      visibility: visible !important;
+      transform: none !important;
+      width: auto !important;
+      height: auto !important;
+      background-color: transparent !important;
+    }
+
+    .offcanvas-header {
+      display: none;
+    }
+
+    .offcanvas-body {
+      display: flex;
+      flex-grow: 0;
+      padding: 0;
+      overflow-y: visible;
+    }
+  }
+
   @media (max-width: 991px) {
-    .navbar-collapse {
-      background-color: rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin-top: 0.5rem;
+    .offcanvas {
+      width: 300px;
+    }
+
+    .navbar-nav .nav-link::after {
+      bottom: -5px;
     }
   }
 </style>
